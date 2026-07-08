@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" 
+    content="width=device-width, initial-scale=1.0" />
+
+    <!-- Browser Tab Logo -->
+    <link 
+    rel="icon" 
+    type="image/png" 
+    href="./images/slv-tab-logo.png">
+
+    <link 
+    rel="apple-touch-icon" 
+    href="./images/slv-tab-logo.png">
+  <title>SLV Enterprises - Premium Paper Plate Manufacturers & Suppliers, Bengaluru</title>
+  <meta name="description" content="SLV Enterprises — Leading manufacturer and exporter of silver paper plates and raw materials from Bengaluru. Bulk supply across India and international markets." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="SLV Enterprises — Premium Paper Plate Manufacturers" />
+  <meta property="og:description" content="Trusted manufacturer of silver paper plates & raw materials. Serving India and global markets from Bengaluru." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── RESET ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 400;
+      background: #FAF8F4;
+      color: #1A1A1A;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ─── CSS VARIABLES ─── */
+    :root {
+      --ink:       #1A1A1A;
+      --rust:      #8B3A2A;
+      --rust-dk:   #6B2B1D;
+      --rust-lt:   #F5E8E4;
+      --sand:      #C9A96E;
+      --sand-lt:   #F5EDDC;
+      --bg:        #FAF8F4;
+      --bg-alt:    #F1EDE4;
+      --sub:       #6B6560;
+      --white:     #FFFFFF;
+      --dark:      #1A1008;
+      --nav-h:     72px;
+    }
+
+    /* ─── TYPOGRAPHY ─── */
+    h1,h2,h3,h4 { font-family: 'Playfair Display', serif; line-height: 1.12; }
+    .section-label {
+      display: inline-block;
+      font-family: 'Outfit', sans-serif;
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--sand); margin-bottom: 12px;
+    }
+    .section-heading {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: clamp(28px, 3.6vw, 44px);
+      color: var(--ink); line-height: 1.14; margin-bottom: 14px;
+    }
+
+    /* ─── SCROLL ANIMATION ─── */
+    .fi { opacity: 0; transform: translateY(28px); transition: opacity .55s ease, transform .55s ease; }
+    .fi.vis { opacity: 1; transform: none; }
+
+    /* ─── BUTTONS ─── */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 28px; border-radius: 6px;
+      font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 500;
+      cursor: pointer; text-decoration: none;
+      transition: all .25s ease; border: 1.5px solid transparent; letter-spacing: .02em;
+    }
+    .btn-p { background: var(--rust); color: var(--white); border-color: var(--rust); }
+    .btn-p:hover { background: var(--rust-dk); border-color: var(--sand); box-shadow: 0 4px 18px rgba(139,58,42,.28); }
+    .btn-o { background: transparent; color: var(--rust); border-color: var(--rust); }
+    .btn-o:hover { background: var(--rust-lt); border-color: var(--sand); }
+    .btn-w { background: var(--white); color: var(--rust); border-color: var(--white); }
+    .btn-w:hover { background: var(--sand-lt); border-color: var(--sand); }
+
+    /* ─── LAYOUT ─── */
+    .ctr { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+    /* ─── GRAIN OVERLAY ─── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+      opacity: 0.4;
+    }
+
+    /* ════════════════════════════════════
+       NAVBAR
+    ════════════════════════════════════ */
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: var(--white); transition: box-shadow .3s ease;
+      border-bottom: 1px solid rgba(0,0,0,.06);
+    }
+    #nav.sh { box-shadow: 0 2px 22px rgba(0,0,0,.09); }
+    .nav-in {
+      display: flex; align-items: center; justify-content: space-between;
+      height: var(--nav-h); max-width: 1160px; margin: 0 auto; padding: 0 24px;
+    }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .site-logo{width:65px; height:65px; object-fit:contain;
+      filter:
+      drop-shadow(
+      0 4px 8px rgba(0,0,0,.15)
+      );
+      }
+      .logo{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      }
+    .logo-txt { display: flex; flex-direction: column; line-height: 1.1; }
+    .logo-n { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 19px; color: var(--ink); }
+    .logo-s { font-family: 'Outfit', sans-serif; font-weight: 300; font-size: 10.5px; color: var(--sub); letter-spacing: .12em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a {
+      font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 400;
+      color: var(--ink); text-decoration: none; position: relative; padding-bottom: 2px;
+    }
+    .nav-links a::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px; background: var(--sand); transition: width .25s ease; }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-cta { margin-left: 10px; }
+    .hbg { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hbg span { display: block; width: 24px; height: 2px; background: var(--rust); border-radius: 2px; transition: all .3s ease; }
+    .mob-menu {
+      display: none; position: absolute; top: var(--nav-h); left: 0; right: 0;
+      background: var(--white); box-shadow: 0 8px 28px rgba(0,0,0,.1); padding: 14px 24px 22px;
+    }
+    .mob-menu.open { display: block; }
+    .mob-menu ul { list-style: none; }
+    .mob-menu ul li { border-bottom: 1px solid rgba(0,0,0,.06); }
+    .mob-menu ul li a { display: block; padding: 12px 0; font-size: 15px; color: var(--ink); text-decoration: none; }
+    .mob-menu .btn { margin-top: 14px; width: 100%; justify-content: center; }
+
+    /* ════════════════════════════════════
+       HERO
+    ════════════════════════════════════ */
+    #hero {
+      background: var(--dark);
+      background-image:
+        radial-gradient(ellipse 70% 60% at 80% 50%, rgba(201,169,110,.10) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 40% at 10% 80%, rgba(139,58,42,.12) 0%, transparent 60%);
+      padding-top: calc(var(--nav-h) + 72px); padding-bottom: 88px;
+      position: relative; overflow: hidden;
+    }
+    /* decorative lines */
+    #hero::after {
+      content: '';
+      position: absolute; top: 0; right: 0; bottom: 0;
+      width: 38%; border-left: 1px solid rgba(201,169,110,.12);
+      background: linear-gradient(180deg, rgba(201,169,110,.04) 0%, transparent 100%);
+      pointer-events: none;
+    }
+    .hero-g { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; z-index: 1; }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(201,169,110,.12); color: var(--sand);
+      border: 1px solid rgba(201,169,110,.25);
+      border-radius: 100px; padding: 6px 16px; font-size: 12.5px; font-weight: 500;
+      font-family: 'Outfit', sans-serif; margin-bottom: 24px; letter-spacing: .04em;
+    }
+    .hero-h {
+      font-family: 'Playfair Display', serif; font-weight: 900;
+      font-size: clamp(36px, 5.2vw, 64px); color: var(--white); line-height: 1.05; margin-bottom: 20px;
+    }
+    .hero-h em { color: var(--sand); font-style: normal; }
+    .hero-sub { font-size: 15.5px; font-weight: 300; color: rgba(255,255,255,.65); line-height: 1.76; max-width: 440px; margin-bottom: 36px; }
+    .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 52px; }
+    .hero-stats { display: flex; align-items: center; gap: 28px; }
+    .stat-n { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 28px; color: var(--white); line-height: 1; }
+    .stat-l { font-size: 11px; color: rgba(255,255,255,.45); margin-top: 3px; letter-spacing: .06em; text-transform: uppercase; }
+    .stat-d { width: 1px; height: 38px; background: rgba(255,255,255,.12); }
+
+    /* Hero visual */
+    .hero-vis{
+        position: relative;
+        min-height: 550px;
+        margin-left:40px;
+    }
+
+    .hero-collage{
+        position: relative;
+        width: 100%;
+        height: 550px;
+    }
+
+    .hero-collage::before{
+    content:'';
+    position:absolute;
+    width:700px;
+    height:700px;
+    border-radius:50%;
+    background:rgba(201,169,110,.22);
+    filter:blur(100px);
+    top:20px;
+    left:50px;
+    }
+
+    .plate{
+      position:absolute;
+      object-fit:contain;
+      filter:drop-shadow(0 18px 28px rgba(0,0,0,.35));
+    }
+
+    /* Main Hero Product */
+    .p7{
+        width:850px;
+        right:-280px; /* 340px */
+        bottom:-110px; /* 280px */
+        position:absolute;
+        z-index:5;
+    }
+
+    @keyframes float{
+        0%,100%{
+            transform: translateY(0);
+        }
+        50%{
+            transform: translateY(-12px);
+        }
+    }
+
+    /* ════════════════════════════════════
+       TRUST BAR
+    ════════════════════════════════════ */
+    #trust {
+      background: var(--rust); padding: 18px 0;
+      border-bottom: 2px solid rgba(255,255,255,.1);
+    }
+    .trust-in {
+      display: flex; align-items: center; justify-content: center;
+      gap: 44px; flex-wrap: wrap;
+    }
+    .trust-item { display: flex; align-items: center; gap: 9px; }
+    .trust-ico { font-size: 16px; }
+    .trust-txt { font-size: 13px; font-weight: 500; color: rgba(255,255,255,.9); letter-spacing: .02em; white-space: nowrap; }
+    .trust-div { width: 1px; height: 22px; background: rgba(255,255,255,.22); }
+
+    /* ════════════════════════════════════
+       ABOUT
+    ════════════════════════════════════ */
+    #about { background: var(--bg); padding: 96px 0; }
+    .about-g { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .about-imgs { position: relative; height: 440px; }
+    .aimg {
+      position: absolute; border-radius: 16px; overflow: hidden;
+      background: var(--bg-alt); box-shadow: 0 8px 28px rgba(0,0,0,.10);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .aimg .ph { font-size: 48px; opacity: .3; }
+    .aimg img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .ai1 { width: 260px; height: 310px; top: 0; left: 0; }
+    .ai2 { width: 230px; height: 270px; bottom: 0; right: 0; border: 3px solid var(--sand); }
+    .about-stamp {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      width: 88px; height: 88px; border-radius: 50%;
+      background: var(--rust); color: var(--white); z-index: 2;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      box-shadow: 0 6px 24px rgba(139,58,42,.35); text-align: center;
+    }
+    .about-stamp strong { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; line-height: 1; }
+    .about-stamp span { font-size: 9.5px; opacity: .8; letter-spacing: .05em; text-transform: uppercase; margin-top: 2px; }
+    .about-sub { font-size: 15px; font-weight: 300; color: var(--sub); line-height: 1.78; margin-bottom: 28px; }
+    .about-points { display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
+    .ap { display: flex; align-items: flex-start; gap: 12px; }
+    .ap-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--sand); margin-top: 6px; flex-shrink: 0; }
+    .ap p { font-size: 14px; color: var(--ink); }
+
+    /* ════════════════════════════════════
+       PRODUCTS — INDIA
+    ════════════════════════════════════ */
+    #products-india { background: var(--bg-alt); padding: 96px 0; }
+    #products-export { background: var(--bg); padding: 96px 0; border-top: 1px solid rgba(0,0,0,.06); }
+    .prod-hd { margin-bottom: 48px; }
+    .prod-sub { font-size: 15px; color: var(--sub); max-width: 520px; margin-top: 8px; }
+    /* Carousel wrapper */
+    .carousel-wrap { position: relative; }
+    .carousel-viewport { overflow: hidden; border-radius: 12px; }
+    .carousel-track {
+      display: flex; gap: 20px;
+      transition: transform .4s cubic-bezier(.25,.46,.45,.94);
+    }
+    .prod-card {
+      flex-shrink: 0; background: var(--white);
+      border-radius: 14px; border: 1px solid rgba(0,0,0,.07);
+      overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.06);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .prod-card:hover { transform: translateY(-5px); box-shadow: 0 12px 32px rgba(0,0,0,.11); }
+    .prod-img {
+      width: 100%; aspect-ratio: 1; background: var(--bg-alt);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; position: relative;
+    }
+    .prod-img img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+    .prod-img .prod-ph { font-size: 48px; opacity: .3; }
+    .prod-body { padding: 16px 16px 18px; }
+    .prod-tag {
+      display: inline-block; font-size: 10.5px; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase; color: var(--sand);
+      background: var(--sand-lt); border-radius: 4px; padding: 3px 8px; margin-bottom: 8px;
+    }
+    .prod-name { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 16px; color: var(--ink); margin-bottom: 4px; line-height: 1.3; }
+    .prod-spec { font-size: 12.5px; color: var(--sub); line-height: 1.5; }
+    /* Nav buttons */
+    .carousel-nav { display: flex; align-items: center; justify-content: flex-end; gap: 10px; margin-top: 24px; }
+    .c-btn {
+      width: 42px; height: 42px; border-radius: 50%; border: 1.5px solid rgba(0,0,0,.15);
+      background: var(--white); cursor: pointer; display: flex; align-items: center; justify-content: center;
+      font-size: 18px; color: var(--ink); transition: all .2s ease; box-shadow: 0 2px 8px rgba(0,0,0,.07);
+    }
+    .c-btn:hover { border-color: var(--rust); color: var(--rust); box-shadow: 0 4px 14px rgba(139,58,42,.18); }
+    .c-btn:disabled { opacity: .35; cursor: not-allowed; }
+    .c-counter { font-size: 13px; color: var(--sub); font-weight: 500; margin: 0 4px; min-width: 50px; text-align: center; }
+    /* Export placeholder */
+    .export-card-ph {
+      flex-shrink: 0; background: var(--white);
+      border-radius: 14px; border: 2px dashed rgba(0,0,0,.12);
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 10px; text-align: center; padding: 28px 16px;
+    }
+    .export-card-ph .ph-ico { font-size: 36px; opacity: .4; }
+    .export-card-ph p { font-size: 12.5px; color: var(--sub); }
+    .export-card-ph strong { font-size: 14px; color: var(--ink); display: block; margin-bottom: 4px; }
+
+    /* ════════════════════════════════════
+       GALLERY
+    ════════════════════════════════════ */
+    #gallery { background: var(--dark); padding: 96px 0; }
+    .gal-hd .section-heading { color: var(--white); }
+    .gal-hd { margin-bottom: 44px; }
+    /* Bento-style grid */
+    .bento {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr;
+      grid-template-rows: 240px 240px;
+      gap: 14px;
+    }
+    .bento-item {
+      border-radius: 14px; overflow: hidden; position: relative;
+      background: rgba(255,255,255,.05); cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .bento-item .ph { font-size: 40px; opacity: .22; }
+    .bento-item img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .bento-item .g-ov {
+      position: absolute; inset: 0;
+      background: rgba(201,169,110,0); transition: background .3s ease;
+    }
+    .bento-item:hover .g-ov { background: rgba(201,169,110,.18); }
+    .bento-item:first-child { grid-row: span 2; }
+    .bento-item:nth-child(4) { grid-column: span 2; }
+
+    /* ════════════════════════════════════
+       CONTACT
+    ════════════════════════════════════ */
+    #contact { background: var(--bg-alt); padding: 96px 0; }
+    .con-g { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .con-h { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 36px; color: var(--ink); margin-bottom: 28px; }
+    .con-items { display: flex; flex-direction: column; gap: 18px; margin-bottom: 28px; }
+    .con-item { display: flex; align-items: flex-start; gap: 14px; }
+    .con-ico {
+      width: 44px; height: 44px; border-radius: 50%; background: var(--rust-lt);
+      border: 1.5px solid rgba(139,58,42,.18); display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: 17px;
+    }
+    .con-ico.wa { background: #dcfce7; border-color: rgba(37,211,102,.3); }
+    .con-txt h5 { font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 13px; color: var(--ink); margin-bottom: 2px; }
+    .con-txt a, .con-txt p { font-size: 13.5px; color: var(--sub); text-decoration: none; line-height: 1.55; }
+    .con-txt a:hover { color: var(--rust); }
+    /* Enquiry form */
+    .form-card { background: var(--white); border-radius: 18px; padding: 34px; box-shadow: 0 4px 24px rgba(0,0,0,.07); border-top: 4px solid var(--rust); }
+    .form-title { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 22px; color: var(--ink); margin-bottom: 22px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+    .form-group { display: flex; flex-direction: column; gap: 5px; margin-bottom: 14px; }
+    .form-group label { font-size: 12.5px; font-weight: 600; color: var(--ink); letter-spacing: .02em; }
+    .form-group input, .form-group textarea, .form-group select {
+      padding: 10px 13px; border-radius: 8px; border: 1.5px solid rgba(0,0,0,.12);
+      font-family: 'Outfit', sans-serif; font-size: 14px; color: var(--ink);
+      background: var(--bg); transition: border-color .2s ease; outline: none;
+      resize: vertical;
+    }
+    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+      border-color: var(--rust);
+      box-shadow: 0 0 0 3px rgba(139,58,42,.08);
+    }
+    .form-group textarea { min-height: 100px; }
+    .form-submit { width: 100%; justify-content: center; margin-top: 6px; padding: 14px; font-size: 15px; }
+    .map-wrap { border-radius: 14px; overflow: hidden; box-shadow: 0 4px 18px rgba(0,0,0,.1); height: 200px; margin-top: 22px; }
+    .map-wrap iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+    /* ════════════════════════════════════
+       FOOTER
+    ════════════════════════════════════ */
+    #foot {
+      background: var(--dark);
+      background-image: radial-gradient(ellipse 60% 50% at 80% 20%, rgba(201,169,110,.06) 0%, transparent 60%);
+      padding: 50px 0 0;
+    }
+    .foot-g {display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 44px; padding-bottom: 48px; }
+    .foot-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 4px;
+    }
+    .footer-logo {
+      width: 55px;
+      height: 55px;
+      object-fit: contain;
+      flex-shrink: 0;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,.35));
+    }
+.foot-desc { font-size: 13.5px; font-weight: 300; color: rgba(255,255,255,.48); margin-top: 14px; line-height: 1.68; max-width: 248px; }
+    .foot-logo-n { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 20px; color: var(--white); }
+    .foot-logo-s { font-size: 10px; color: rgba(255,255,255,.35); letter-spacing: .1em; text-transform: uppercase; }
+    .foot-col h5 { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--sand); margin-bottom: 18px; }
+    .foot-links { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+    .foot-links a { font-size: 13.5px; color: rgba(255,255,255,.55); text-decoration: none; transition: color .2s; }
+    .foot-links a:hover { color: var(--sand); }
+    .foot-ci { display: flex; flex-direction: column; gap: 11px; }
+    .foot-ci-r { display: flex; align-items: flex-start; gap: 9px; font-size: 13px; color: rgba(255,255,255,.55); }
+    .foot-bot { border-top: 1px solid rgba(255,255,255,.08); padding: 18px 0; text-align: center; }
+    .foot-bot p { font-size: 12.5px; color: rgba(255,255,255,.32); }
+    .foot-bot a { color: rgba(255,255,255,.52); text-decoration: none; font-weight: 500; transition: all .25s ease; }
+    .foot-bot a:hover { color: var(--sand); }
+
+    /* ════════════════════════════════════
+       FLOATING ELEMENTS
+    ════════════════════════════════════ */
+    .float-g { position: fixed; right: 20px; bottom: 20px; z-index: 900; display: flex; flex-direction: column; gap: 10px; align-items: center; }
+    .btt {
+      width: 44px; height: 44px; border-radius: 50%; background: var(--rust); color: var(--white);
+      display: flex; align-items: center; justify-content: center; cursor: pointer; border: none;
+      box-shadow: 0 4px 14px rgba(139,58,42,.35); font-size: 20px;
+      opacity: 0; pointer-events: none; transition: opacity .3s, transform .2s;
+    }
+    .btt.show { opacity: 1; pointer-events: all; }
+    .btt:hover { transform: translateY(-2px); }
+    .wa-b {
+      width: 52px; height: 52px; border-radius: 50%; background: #25D366;
+      display: flex; align-items: center; justify-content: center; text-decoration: none;
+      box-shadow: 0 4px 16px rgba(37,211,102,.42); transition: transform .2s;
+    }
+    .wa-b:hover { transform: scale(1.09); }
+    .wa-b svg { width: 27px; height: 27px; }
+
+    /* ════════════════════════════════════
+       RESPONSIVE
+    ════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .foot-g { grid-template-columns: 1fr 1fr; }
+      .foot-g .foot-col:last-child { grid-column: span 2; }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .hbg { display: flex; }
+      .hero-g { grid-template-columns: 1fr; gap: 44px; }
+      .hero-vis { order: -1; }
+      .hero-plate-ring { width: 240px; height: 240px; }
+      .hero-plate-inner { width: 165px; height: 165px; }
+      .about-g { grid-template-columns: 1fr; gap: 44px; }
+      .about-imgs { height: 300px; }
+      .ai1 { width: 200px; height: 240px; }
+      .ai2 { width: 180px; height: 210px; }
+      .bento { grid-template-columns: 1fr 1fr; grid-template-rows: 180px 180px 180px; }
+      .bento-item:first-child { grid-row: span 1; }
+      .bento-item:nth-child(4) { grid-column: span 1; }
+      .con-g { grid-template-columns: 1fr; gap: 44px; }
+      .foot-g { grid-template-columns: 1fr; gap: 28px; }
+      .foot-g .foot-col:last-child { grid-column: span 1; }
+      .form-row { grid-template-columns: 1fr; }
+      .site-logo { width:48px; height:48px; }
+      .logo-n { font-size:16px; }
+      .logo-s { font-size:8px; }
+    }
+    @media (max-width: 480px) {
+      .hero-ctas { flex-direction: column; }
+      .hero-ctas .btn { width: 100%; justify-content: center; }
+      .trust-div { display: none; }
+      .bento { grid-template-columns: 1fr; grid-template-rows: auto; }
+      .bento-item { height: 200px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav id="nav">
+  <div class="nav-in">
+    <a href="#hero" 
+      class="logo" 
+      aria-label="SLV Enterprises Home">
+
+      <img 
+      src="./images/slv-tab-logo.png"
+      class="site-logo"
+      alt="Logo">
+
+      <div class="logo-txt">
+
+      <span class="logo-n">
+      SLV Enterprises
+      </span>
+
+      <span class="logo-s">
+      Paper Plate Manufacturers
+      </span>
+      </div>
+      </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#products-india">Products</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn btn-p nav-cta">Get a Quote</a>
+    <button class="hbg" id="hbg" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mob-menu" id="mob-menu">
+    <ul>
+      <li><a href="#about" class="mnl">About Us</a></li>
+      <li><a href="#products-india" class="mnl">Products</a></li>
+      <li><a href="#gallery" class="mnl">Gallery</a></li>
+      <li><a href="#contact" class="mnl">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn btn-p mnl">Get a Quote</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section id="hero">
+  <div class="ctr">
+    <div class="hero-g">
+      <!-- Left -->
+      <div class="fi">
+        <div class="hero-tag">🏭 Kamakshipalya, Bengaluru · Since 2014</div>
+        <h1 class="hero-h">India's Trusted<br/><em>Paper Plate</em><br/>Manufacturer</h1>
+        <p class="hero-sub">Premium quality paper plates and raw materials. Manufactured with precision, delivered in bulk. Serving distributors, caterers, and exporters across India and beyond.</p>
+        <div class="hero-ctas">
+          <a href="#products-india" class="btn btn-p">View Products</a>
+          <a href="#contact" class="btn btn-w">Enquire Now</a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="stat-n">14+</div>
+            <div class="stat-l">Product Variants</div>
+          </div>
+          <div class="stat-d"></div>
+          <div>
+            <div class="stat-n">PAN India</div>
+            <div class="stat-l">Supply Network</div>
+          </div>
+          <div class="stat-d"></div>
+          <div>
+            <div class="stat-n">Export</div>
+            <div class="stat-l">Ready</div>
+          </div>
+        </div>
+      </div>
+      <!-- Right -->
+      <div class="hero-vis fi" style="transition-delay:.14s">
+
+          <div class="hero-collage">
+
+              <img src="./images/Hero-Section/10-inch-PP.png"
+                  class="plate p7"
+                  alt="10-inch Paper Plate">
+
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRUST BAR ═══ -->
+<div id="trust">
+  <div class="ctr">
+    <div class="trust-in">
+      <div class="trust-item"><span class="trust-ico">🏭</span><span class="trust-txt">Direct From Factory</span></div>
+      <div class="trust-div"></div>
+      <div class="trust-item"><span class="trust-ico">📦</span><span class="trust-txt">Bulk Orders Welcome</span></div>
+      <div class="trust-div"></div>
+      <div class="trust-item"><span class="trust-ico">🚚</span><span class="trust-txt">Pan-India Delivery</span></div>
+      <div class="trust-div"></div>
+      <div class="trust-item"><span class="trust-ico">✈️</span><span class="trust-txt">International Export</span></div>
+      <div class="trust-div"></div>
+      <div class="trust-item"><span class="trust-ico">💎</span><span class="trust-txt">Premium Silver Finish</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about">
+  <div class="ctr">
+    <div class="about-g">
+      <!-- Left: stat cards -->
+      <div class="about-imgs fi">
+        <div class="aimg ai1" style="background:var(--rust-lt); border:none; box-shadow:0 8px 28px rgba(139,58,42,.12); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:24px; padding:32px;">
+          <div style="text-align:center;">
+            <div style="font-family:'Playfair Display',serif; font-size:48px; font-weight:900; color:var(--rust); line-height:1;">14+</div>
+            <div style="font-size:13px; color:var(--sub); letter-spacing:.06em; text-transform:uppercase; margin-top:4px;">Product Variants</div>
+          </div>
+          <div style="width:40px; height:1px; background:rgba(139,58,42,.2);"></div>
+          <div style="text-align:center;">
+            <div style="font-family:'Playfair Display',serif; font-size:48px; font-weight:900; color:var(--rust); line-height:1;">12+</div>
+            <div style="font-size:13px; color:var(--sub); letter-spacing:.06em; text-transform:uppercase; margin-top:4px;">Years in Business</div>
+          </div>
+        </div>
+        <div class="aimg ai2" style="background:var(--dark); border:2px solid var(--sand); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:20px; padding:24px;">
+          <div style="text-align:center;">
+            <div style="font-size:32px; margin-bottom:8px;">🏭</div>
+            <div style="font-family:'Playfair Display',serif; font-size:18px; font-weight:700; color:var(--white); line-height:1.2;">Direct From</div>
+            <div style="font-family:'Playfair Display',serif; font-size:18px; font-weight:700; color:var(--sand);">Factory</div>
+          </div>
+          <div style="width:32px; height:1px; background:rgba(201,169,110,.3);"></div>
+          <div style="font-size:12px; color:rgba(255,255,255,.5); text-align:center; line-height:1.6;">Kamakshipalya,<br>Bengaluru</div>
+        </div>
+        <div class="about-stamp">
+          <strong>2014</strong>
+          <span>Established</span>
+        </div>
+      </div>
+      <!-- Right: text -->
+      <div class="fi" style="transition-delay:.14s">
+        <span class="section-label">Who We Are</span>
+        <h2 class="section-heading">Built on Quality,<br/>Driven by Precision</h2>
+        <p class="about-sub">SLV Enterprises is a Bengaluru-based manufacturer specialising in silver-finish paper plates and their raw materials (laminated blanks). Operating out of the Vijayanagar–Kamakshipalya corridor, we have been a reliable supply partner for distributors, wholesalers, event caterers, and export agents across Karnataka and beyond.</p>
+        <p class="about-sub">Every plate leaving our facility goes through strict quality checks — from raw material grammage and silver coating uniformity to finished plate strength and stacking precision. We manufacture both the <strong>finished paper plates</strong> and the <strong>raw materials</strong>, giving our clients the flexibility to choose what fits their operation.</p>
+        <div class="about-points">
+          <div class="ap"><div class="ap-dot"></div><p>7″ to 12″ range of silver plates — suitable for all catering formats</p></div>
+          <div class="ap"><div class="ap-dot"></div><p>Green &amp; Yellow Thali variants for traditional South Indian meals</p></div>
+          <div class="ap"><div class="ap-dot"></div><p>Raw material supply for plate manufacturers</p></div>
+          <!-- <div class="ap"><div class="ap-dot"></div><p>Export-ready packaging and documentation support</p></div> -->
+        </div>
+        <a href="#contact" class="btn btn-p">Contact Us Today</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRODUCTS — INDIA ═══ -->
+<section id="products-india">
+  <div class="ctr">
+    <div class="prod-hd fi">
+      <span class="section-label">Domestic Supply</span>
+      <h2 class="section-heading">Products We Sell in India</h2>
+      <p class="prod-sub">Available in wholesale and retail quantities. All products manufactured in-house and delivered directly from our Bengaluru factory.</p>
+    </div>
+    <div class="carousel-wrap fi" style="transition-delay:.1s" id="india-wrap">
+      <div class="carousel-viewport">
+        <div class="carousel-track" id="india-track">
+
+          <!-- Card 1 -->
+          <div class="prod-card" style="width:220px">
+            <div class="prod-img">
+              <span class="prod-ph">🍽️</span>
+              <img src="./images/Products-Section/7inch-plate.png" alt="7 Inch Silver Paper Plate" onerror="this.style.display='none'"/>
+            </div>
+            <div class="prod-body">
+              <span class="prod-tag">Paper Plate</span>
+              <div class="prod-name">7″ Silver Paper Plate</div>
+              <div class="prod-spec">Dia: 7 in · 80 to 300 GSM · Silver finish</div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="prod-card" style="width:220px">
+            <div class="prod-img">
+              <span class="prod-ph">📄</span>
+              <img src="./images/Products-Section/7inch-rm.png" alt="7 Inch Raw Material" onerror="this.style.display='none'"/>
+            </div>
+            <div class="prod-body">
+              <span class="prod-tag">Raw Material</span>
+              <div class="prod-name">7″ Raw Material</div>
+              <div class="prod-spec">Dia: 7 in · Laminated blank · Silver coated</div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="prod-card" style="width:220px">
+            <div class="prod-img">
+              <span class="prod-ph">🍽️</span>
+              <img src="./images/Products-Section/8inch-plate.png" alt="8 Inch Silver Paper Plate" onerror="this.style.display='none'"/>
+            </div>
+            <div class="prod-body">
+              <span class="prod-tag">Paper Plate</span>
+              <div class="prod-name">8″ Silver Paper Plate</div>
+              <div class="prod-spec">Dia: 8 in · Silver finish · Pack of 100/500/1000</div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="prod-card" style="width:220px">
+            <div class="prod-img">
+              <span class="prod-ph">📄</span>
+              <img src="./images/Products-Section/8inch-rm.png" alt="8 Inch Raw Material" onerror="this.style.display='none'"/>
+            </div>
+            <div class="prod-body">
+              <span class="prod-tag">Raw Material</span>
+              <div class="prod-name">8″ Raw Material</div>
+              <div class="prod-spec">Dia: 8 in · Laminated blank · Silver coated</div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="prod-card" style="width:220px">
+            <div class="prod-img">
+              <span class="prod-ph">🍽️</span>
+              <img src="./images/Products-Section/9inch-plate.png" alt="9 Inch Silver Paper Plate" onerror="this.style.display='none'"/>
+            </div>
+            <div class="prod-body">
+              <span class="prod-tag">Paper Plate</span>
+              <div class="prod-name">9″ Silver Paper Plate</div>
+              <div class="prod-spec">Dia: 9 in · Silver finish · Pack of 100/500/1000</div>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="prod-card" style="width:220px">
+            <div class="prod-img">
+              <span class="prod-ph">📄</span>
+              <img src="./images/Products-Section/9inch-rm.png" alt="9 Inch Raw Material" onerror="this.style.display='none'"/>
+            </div>
+            <div class="prod-body">
+              <span class="prod-tag">Raw Material</span>
+              <div class="prod-name">9″ Raw Material</div>
+              <div class="prod-spec">Dia: 9 in · Laminated blank · Silver coated</div>
+            </div>
+          </div>
+
+          <!-- Card 7 -->
+          <div class="prod-card" style="width:220px">
+            <div class="prod-img">
+              <span class="prod-ph">🍽️</span>
+              <img src="./images/Products-Section/10inch-plate.png" alt="10 Inch Silver Paper Plate" onerror="this.style.display='none'"/>
+            </div>
+            <div class="prod-body">
+              <span class="prod-tag">Paper Plate</span>
+              <div class="prod-name">10″ Silver Paper Plate</div>
+              <div class="prod-spec">Dia: 10 in · Silver finish · Pack of 100/500/1000</div>
+            </div>
+          </div>
+
+          <!-- Card 8 -->
+          <div class="prod-card" style="width:220px">
+            <div class="prod-img">
+              <span class="prod-ph">📄</span>
+              <img src="./images/Products-Section/10-inch-rm.png" alt="10 Inch Raw Material" onerror="this.style.display='none'"/>
+            </div>
+            <div class="prod-body">
+              <span class="prod-tag">Raw Material</span>
+              <div class="prod-name">10″ Raw Material</div>
+              <div class="prod-spec">Dia: 10 in · Laminated blank · Silver coated</div>
+            </div>
+          </div>
+
+          <!-- Card 9 -->
+          <div class="prod-card" style="width:220px">
+            <div class="prod-img">
+              <span class="prod-ph">🍽️</span>
+              <img src="./images/Products-Section/12inch-plate.png" alt="12 Inch Silver Paper Plate" onerror="this.style.display='none'"/>
+            </div>
+            <div class="prod-body">
+              <span class="prod-tag">Paper Plate</span>
+              <div class="prod-name">12″ Silver Paper Plate</div>
+              <div class="prod-spec">Dia: 12 in · Silver finish · Pack of 100/500/1000</div>
+            </div>
+          </div>
+
+          <!-- Card 10 -->
+          <div class="prod-card" style="width:220px">
+            <div class="prod-img">
+              <span class="prod-ph">📄</span>
+              <img src="./images/Products-Section/12inch-rm.png" alt="12 Inch Raw Material" onerror="this.style.display='none'"/>
+            </div>
+            <div class="prod-body">
+              <span class="prod-tag">Raw Material</span>
+              <div class="prod-name">12″ Raw Material</div>
+              <div class="prod-spec">Dia: 12 in · Laminated blank · Silver coated</div>
+            </div>
+          </div>
+
+          <!-- Card 11 -->
+          <div class="prod-card" style="width:220px">
+            <div class="prod-img" style="background:#e8f5e9">
+              <span class="prod-ph">🍃</span>
+              <img src="./images/Products-Section/green-plate.png" alt="Green Thali Paper Plate" onerror="this.style.display='none'"/>
+            </div>
+            <div class="prod-body">
+              <span class="prod-tag" style="background:#e8f5e9;color:#2e7d32;">Paper Plate</span>
+              <div class="prod-name">Green Thali Plate</div>
+              <div class="prod-spec">Full thali size · Green finish · Traditional meal style</div>
+            </div>
+          </div>
+
+          <!-- Card 12 -->
+          <div class="prod-card" style="width:220px">
+            <div class="prod-img" style="background:#e8f5e9">
+              <span class="prod-ph">📄</span>
+              <img src="./images/Products-Section/green-rm.png" alt="Green Thali Raw Material" onerror="this.style.display='none'"/>
+            </div>
+            <div class="prod-body">
+              <span class="prod-tag" style="background:#e8f5e9;color:#2e7d32;">Raw Material</span>
+              <div class="prod-name">Green Thali Raw Material</div>
+              <div class="prod-spec">Laminated thali blank · Green coated</div>
+            </div>
+          </div>
+
+          <!-- Card 13 -->
+          <div class="prod-card" style="width:220px">
+            <div class="prod-img" style="background:#fffde7">
+              <span class="prod-ph">🌟</span>
+              <img src="./images/Products-Section/yellow-plate.png" alt="Yellow Thali Paper Plate" onerror="this.style.display='none'"/>
+            </div>
+            <div class="prod-body">
+              <span class="prod-tag" style="background:#fffde7;color:#f57f17;">Paper Plate</span>
+              <div class="prod-name">Yellow Thali Plate</div>
+              <div class="prod-spec">Full thali size · Yellow finish · Traditional meal style</div>
+            </div>
+          </div>
+
+          <!-- Card 14 -->
+          <div class="prod-card" style="width:220px">
+            <div class="prod-img" style="background:#fffde7">
+              <span class="prod-ph">📄</span>
+              <img src="./images/Products-Section/yellow-rm.png" alt="Yellow Thali Raw Material" onerror="this.style.display='none'"/>
+            </div>
+            <div class="prod-body">
+              <span class="prod-tag" style="background:#fffde7;color:#f57f17;">Raw Material</span>
+              <div class="prod-name">Yellow Thali Raw Material</div>
+              <div class="prod-spec">Laminated thali blank · Yellow coated</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="carousel-nav">
+        <span class="c-counter" id="india-counter">1 / 14</span>
+        <button class="c-btn" id="india-prev" aria-label="Previous" disabled>&#8592;</button>
+        <button class="c-btn" id="india-next" aria-label="Next">&#8594;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRODUCTS — EXPORT ═══ -->
+<!-- <section id="products-export">
+  <div class="ctr">
+    <div class="prod-hd fi">
+      <span class="section-label">International Markets</span>
+      <h2 class="section-heading">Products We Export</h2>
+      <p class="prod-sub">SLV Enterprises is building its export portfolio. Contact us for bulk export enquiries — we support international packaging, documentation, and shipment coordination.</p>
+    </div>
+    <div class="carousel-wrap fi" style="transition-delay:.1s" id="export-wrap">
+      <div class="carousel-viewport">
+        <div class="carousel-track" id="export-track">
+
+          <div class="export-card-ph" style="width:220px; min-height:280px">
+            <span class="ph-ico">✈️</span>
+            <div><strong>Export Product 1</strong><p>Product name &amp; spec coming soon. Contact us for bulk enquiry.</p></div>
+          </div>
+          <div class="export-card-ph" style="width:220px; min-height:280px">
+            <span class="ph-ico">🌍</span>
+            <div><strong>Export Product 2</strong><p>Product name &amp; spec coming soon. Contact us for bulk enquiry.</p></div>
+          </div>
+          <div class="export-card-ph" style="width:220px; min-height:280px">
+            <span class="ph-ico">📦</span>
+            <div><strong>Export Product 3</strong><p>Product name &amp; spec coming soon. Contact us for bulk enquiry.</p></div>
+          </div>
+          <div class="export-card-ph" style="width:220px; min-height:280px">
+            <span class="ph-ico">🚢</span>
+            <div><strong>Export Product 4</strong><p>Product name &amp; spec coming soon. Contact us for bulk enquiry.</p></div>
+          </div>
+          <div class="export-card-ph" style="width:220px; min-height:280px">
+            <span class="ph-ico">🌐</span>
+            <div><strong>Export Product 5</strong><p>Product name &amp; spec coming soon. Contact us for bulk enquiry.</p></div>
+          </div>
+          <div class="export-card-ph" style="width:220px; min-height:280px">
+            <span class="ph-ico">📋</span>
+            <div><strong>Export Product 6</strong><p>Product name &amp; spec coming soon. Contact us for bulk enquiry.</p></div>
+          </div>
+
+        </div>
+      </div>
+      <div class="carousel-nav">
+        <span class="c-counter" id="export-counter">1 / 6</span>
+        <button class="c-btn" id="export-prev" aria-label="Previous" disabled>&#8592;</button>
+        <button class="c-btn" id="export-next" aria-label="Next">&#8594;</button>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- ═══ GALLERY ═══ -->
+<section id="gallery">
+  <div class="ctr">
+    <div class="gal-hd fi">
+      <span class="section-label">Our Facility</span>
+      <h2 class="section-heading">A Look Inside SLV Enterprises</h2>
+    </div>
+    <!-- Bento grid — replace placeholder imgs with your actual images -->
+    <!-- To add your images: replace src="gallery-N.jpg" with your actual file paths -->
+    <!-- First item is tall (spans 2 rows). Items 4 spans 2 cols. -->
+    <div class="bento fi" style="transition-delay:.1s">
+      <div class="bento-item"><!-- Tall hero: factory exterior or best shot -->
+        <span class="ph">Loading Image</span>
+        <img src="./images/gallery-1.png" alt="SLV Factory" onerror="this.style.display='none'"/>
+        <div class="g-ov"></div>
+      </div>
+      <div class="bento-item">
+        <span class="ph">Loading Image</span>
+        <img src="./images/gallery-2.png" alt="Manufacturing Machine" onerror="this.style.display='none'"/>
+        <div class="g-ov"></div>
+      </div>
+      <div class="bento-item">
+        <span class="ph">Loading Image</span>
+        <img src="./images/gallery-3.png" alt="Product Packaging" onerror="this.style.display='none'"/>
+        <div class="g-ov"></div>
+      </div>
+      <div class="bento-item"><!-- Wide: production floor or stacked products -->
+        <span class="ph">Loading Image</span>
+        <img src="./images/gallery-4.jpg" alt="Paper Plates" onerror="this.style.display='none'"/>
+        <div class="g-ov"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact">
+  <div class="ctr">
+    <div class="con-g">
+      <!-- Left -->
+      <div class="fi">
+        <span class="section-label">Get In Touch</span>
+        <h2 class="con-h">Let's Talk Business</h2>
+        <div class="con-items">
+          <div class="con-item">
+            <div class="con-ico">📞</div>
+            <div class="con-txt">
+              <h5>Phone</h5>
+              <!-- Replace with actual phone number -->
+              <a href="tel:+919845430679">+91 98454 30679</a>
+            </div>
+          </div>
+          <div class="con-item">
+            <div class="con-ico wa">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+            </div>
+            <div class="con-txt">
+              <h5>WhatsApp</h5>
+              <!-- Replace with actual number -->
+              <a href="https://wa.me/919845430679" target="_blank" rel="noopener">Chat on WhatsApp</a>
+            </div>
+          </div>
+          <div class="con-item">
+            <div class="con-ico">✉️</div>
+            <div class="con-txt">
+              <h5>Email</h5>
+              <!-- Replace with actual email -->
+              <a href="mailto:slventerprisesjn@gmail.com">slventerprisesjn@gmail.com</a>
+            </div>
+          </div>
+          <div class="con-item">
+            <div class="con-ico">📍</div>
+            <div class="con-txt">
+              <h5>Address</h5>
+              <p>Kamakshipalya,<br/>Bengaluru, Karnataka – 560 079</p>
+            </div>
+          </div>
+        </div>
+        <div class="map-wrap">
+          <!-- Replace the embed src with the actual Google Maps embed for your factory -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.7714139139466!2d77.5328029!3d12.9864671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3dc64801a6e5%3A0x482b3f2d587b9786!2sSLV%20Enterprises!5e0!3m2!1sen!2sin!4v1780402610832!5m2!1sen!2sin"
+            title="SLV Enterprises Location"
+            allowfullscreen loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+      <!-- Right: form -->
+      <div class="fi" style="transition-delay:.14s">
+        <div class="form-card">
+          <div class="form-title">Send an Enquiry</div>
+          <form id="enq-form" onsubmit="handleForm(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">Your Name *</label>
+                <input type="text" id="fname" placeholder="Full name" required />
+              </div>
+              <div class="form-group">
+                <label for="fphone">Phone / WhatsApp *</label>
+                <input type="tel" id="fphone" placeholder="+91 99999 99999" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="femail">Email Address</label>
+              <input type="email" id="femail" placeholder="you@example.com" />
+            </div>
+            <div class="form-group">
+              <label for="fproduct">Product of Interest</label>
+              <select id="fproduct">
+                <option value="">— Select an option —</option>
+                <option>Paper Plates</option>
+                <option>Raw Materials</option>
+                <option>Export Enquiry</option>
+                <option>Plate Making Machine</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="fmsg">Message / Requirements</label>
+              <textarea id="fmsg" placeholder="Describe your specific requirements..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-p form-submit">Send Enquiry →</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<!-- ═══ FOOTER ═══ -->
+<footer id="foot">
+
+  <div class="ctr">
+
+    <div class="foot-g">
+
+
+      <!-- Column 1 -->
+      <div class="foot-col">
+
+        <div class="foot-logo">
+
+          <img 
+          src="./images/slv-logo.png"
+          class="footer-logo"
+          alt="SLV Enterprises Logo">
+
+
+          <div>
+
+            <div class="foot-logo-n">
+              SLV Enterprises
+            </div>
+
+            <div class="foot-logo-s">
+              Paper Plate Manufacturers
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <p class="foot-desc">
+
+          Premium paper plates and raw materials from Bengaluru.
+          Trusted by distributors, caterers, and exporters across India.
+
+        </p>
+
+      </div>
+
+
+
+      <!-- Column 2 -->
+      <div class="foot-col">
+
+        <h5>
+          Quick Links
+        </h5>
+
+
+        <ul class="foot-links">
+
+          <li>
+            <a href="#about">
+              About Us
+            </a>
+          </li>
+
+
+          <li>
+            <a href="#products-india">
+              India Products
+            </a>
+          </li>
+
+
+          <!-- <li>
+            <a href="#products-export">
+              Export Products
+            </a>
+          </li> -->
+
+
+          <li>
+            <a href="#gallery">
+              Gallery
+            </a>
+          </li>
+
+
+          <li>
+            <a href="#contact">
+              Contact & Enquiry
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+
+
+      <!-- Column 3 -->
+      <div class="foot-col">
+
+        <h5>
+          Contact
+        </h5>
+
+
+        <div class="foot-ci">
+
+
+          <div class="foot-ci-r">
+
+            <span>📞</span>
+
+            <span>
+              +91 98454 30679
+            </span>
+
+          </div>
+
+
+
+          <div class="foot-ci-r">
+
+            <span>✉️</span>
+
+            <span>
+              slventerprisesjn@gmail.com
+            </span>
+
+          </div>
+
+
+
+          <div class="foot-ci-r">
+
+            <span>📍</span>
+
+            <span>
+
+              Kamakshipalya,<br>
+              Bengaluru – 560 079
+
+            </span>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+
+  <!-- Bottom copyright -->
+  <div class="foot-bot">
+
+    <div class="ctr">
+
+      <p>
+
+      © 2026 SLV Enterprises. 
+      All rights reserved
+
+      &nbsp;|&nbsp;
+
+      Designed & Developed by
+
+      <a 
+      href="https://www.linkedin.com/in/ashishsn/"
+      target="_blank">
+
+      Ashish S N
+
+      </a>
+
+      </p>
+
+    </div>
+
+  </div>
+
+
+</footer>
+
+<!-- ═══ FLOATING ═══ -->
+<div class="float-g">
+  <button class="btt" id="btt" aria-label="Back to top">↑</button>
+  <!-- Replace with actual WhatsApp number -->
+  <a href="https://wa.me/919845430679" class="wa-b" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+    </svg>
+  </a>
+</div>
+
+<!-- ═══ JAVASCRIPT ═══ -->
+<script>
+'use strict';
+
+/* ── NAVBAR ── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('sh', window.scrollY > 10), {passive: true});
+
+/* ── HAMBURGER ── */
+const hbg = document.getElementById('hbg');
+const mob = document.getElementById('mob-menu');
+hbg.addEventListener('click', function() {
+  const open = mob.classList.toggle('open');
+  hbg.setAttribute('aria-expanded', open);
+  const spans = hbg.querySelectorAll('span');
+  if (open) {
+    spans[0].style.cssText = 'transform:rotate(45deg) translate(5px,5px)';
+    spans[1].style.cssText = 'opacity:0;transform:scaleX(0)';
+    spans[2].style.cssText = 'transform:rotate(-45deg) translate(5px,-5px)';
+  } else {
+    spans.forEach(s => s.style.cssText = '');
+  }
+});
+document.querySelectorAll('.mnl').forEach(l => l.addEventListener('click', () => {
+  mob.classList.remove('open');
+  hbg.setAttribute('aria-expanded', 'false');
+  hbg.querySelectorAll('span').forEach(s => s.style.cssText = '');
+}));
+
+/* ── SMOOTH SCROLL ── */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e) {
+    const t = document.querySelector(this.getAttribute('href'));
+    if (!t || this.getAttribute('href') === '#') return;
+    e.preventDefault();
+    window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 72, behavior: 'smooth' });
+  });
+});
+
+/* ── BACK TO TOP ── */
+const btt = document.getElementById('btt');
+window.addEventListener('scroll', () => btt.classList.toggle('show', window.scrollY > 300), { passive: true });
+btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+/* ── INTERSECTION OBSERVER ── */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); } });
+}, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+document.querySelectorAll('.fi').forEach(el => io.observe(el));
+
+/* ── CAROUSEL FACTORY ── */
+function makeCarousel(trackId, prevId, nextId, counterId) {
+  const track = document.getElementById(trackId);
+  const prev  = document.getElementById(prevId);
+  const next  = document.getElementById(nextId);
+  const ctr   = document.getElementById(counterId);
+  if (!track) return;
+
+  const cards = Array.from(track.children);
+  const total = cards.length;
+  let idx = 0;
+
+  function visCount() {
+    const w = track.parentElement.parentElement.clientWidth;
+    if (w < 480) return 1;
+    if (w < 768) return 2;
+    if (w < 1024) return 3;
+    return 4;
+  }
+
+  function cardW() {
+    const c = cards[0];
+    return c ? c.offsetWidth + 20 : 240; // 20 = gap
+  }
+
+  function maxIdx() {
+    return Math.max(0, total - visCount());
+  }
+
+  function render() {
+    track.style.transform = `translateX(${-idx * cardW()}px)`;
+    prev.disabled = idx <= 0;
+    next.disabled = idx >= maxIdx();
+    if (ctr) ctr.textContent = `${idx + 1} – ${Math.min(idx + visCount(), total)} / ${total}`;
+  }
+
+  prev.addEventListener('click', () => { if (idx > 0) { idx--; render(); } });
+  next.addEventListener('click', () => { if (idx < maxIdx()) { idx++; render(); } });
+
+  let rt;
+  window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { if (idx > maxIdx()) idx = maxIdx(); render(); }, 160); });
+  render();
+}
+
+makeCarousel('india-track',  'india-prev',  'india-next',  'india-counter');
+// makeCarousel('export-track', 'export-prev', 'export-next', 'export-counter');
+
+/* ── ENQUIRY FORM ── */
+function handleForm(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.form-submit');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  // Simulate submission — replace with your actual backend / FormSubmit / EmailJS integration
+  setTimeout(() => {
+    btn.textContent = '✓ Enquiry Sent!';
+    btn.style.background = '#2e7d32';
+    e.target.reset();
+    setTimeout(() => {
+      btn.textContent = 'Send Enquiry →';
+      btn.style.background = '';
+      btn.disabled = false;
+    }, 3500);
+  }, 1200);
+}
+</script>
+</body>
+</html>
